@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd" >
+<sqlMapConfig>
+<!-- sqlMapConfig.xml
+     ==> iBatis프레임워크(sqlMapper프레임워크)에 대한 환경설정
+ -->
+  <properties resource="./iba/conn.properties"/>
+  <settings
+      cacheModelsEnabled="true"
+      enhancementEnabled="true"  
+      lazyLoadingEnabled="true"
+      maxRequests="30"
+      maxSessions="25"
+      maxTransactions="10"
+      useStatementNamespaces="true"
+  />
+  
+  <transactionManager type="JDBC">
+     <dataSource type="SIMPLE">
+        <property name="JDBC.Driver" value="${driver}"/>
+        <property name="JDBC.ConnectionURL" value="${url}"/>
+        <property name="JDBC.Username" value="${user}"/>
+        <property name="JDBC.Password" value="${password}"/>
+     </dataSource>
+  </transactionManager> 
+  
+  <!-- ★  앞으로 sql문 추가되는 xml파일을 등록 ★  -->
+ 
+  <sqlMap resource="./mapper/dvd.xml"/>
+  
+  
+</sqlMapConfig>
+
+
+
